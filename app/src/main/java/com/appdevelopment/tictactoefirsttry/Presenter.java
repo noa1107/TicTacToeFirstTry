@@ -23,6 +23,7 @@ public class Presenter
 
             else if (status == Constants.GAME_STATUS.TIE)
                 view.displayMessage("to play again click start");
+
         }
     }
 

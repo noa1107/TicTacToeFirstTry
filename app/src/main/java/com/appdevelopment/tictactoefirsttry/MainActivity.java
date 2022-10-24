@@ -43,4 +43,9 @@ public class MainActivity extends AppCompatActivity implements IView
         int col = Integer.valueOf(res[1]); // s[1]
         presenter.moveFromUser(row,col);
     }
+
+    public void startGame(View view)
+    {
+
+    }
 }
