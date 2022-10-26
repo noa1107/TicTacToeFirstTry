@@ -6,6 +6,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements IView
 {
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements IView
     @Override
     public void displayMessage(String message)
     {
-
+        Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
     }
     public void userMove(View view)
     {
@@ -46,6 +47,14 @@ public class MainActivity extends AppCompatActivity implements IView
 
     public void startGame(View view)
     {
-
+        ConstraintLayout cl = findViewById(R.id.parentLayout);
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = 0; j <3 ; j++)
+            {
+                Button v = cl.findViewWithTag(i+","+j);
+                v.setText("");
+            }
+        }
     }
 }
