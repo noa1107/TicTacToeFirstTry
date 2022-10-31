@@ -1,15 +1,31 @@
 package com.appdevelopment.tictactoefirsttry;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements IView
 {
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item)
+    {
+        if(item.getItemId()==(R.id.menu))
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        getMenuInflater().inflate(R.menu.mymenu,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 
     private Presenter presenter;
     @Override
@@ -24,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements IView
     @Override
     public void updateView(int row, int col, int player)
     {
-        String tag = ""+row+","+col;
+        String tag = row+","+col;
         ConstraintLayout cl = findViewById(R.id.parentLayout);
         Button v = cl.findViewWithTag(tag);
         v.setText(player);
