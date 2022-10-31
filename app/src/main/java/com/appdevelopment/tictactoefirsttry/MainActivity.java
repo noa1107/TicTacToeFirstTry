@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity implements IView
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item)
     {
-        if(item.getItemId()==(R.id.menu))
         return super.onOptionsItemSelected(item);
     }
 
